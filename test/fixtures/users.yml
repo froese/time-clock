@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fname: MyString
+  lname: MyString
+  clocked_in: false
+  employed: false
+  admin: false
+
+two:
+  fname: MyString
+  lname: MyString
+  clocked_in: false
+  employed: false
+  admin: false

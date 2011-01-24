@@ -1,0 +1,23 @@
+<div id="main">
+<H3><%= "Report for period #{@period.id}, starting #{@period.starting.to_s(:long)} ending #{@period.ending.to_s(:long)}" %></H3>
+<table  border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <th>User</th>
+    <th>Date/Time</th>
+    <th>Note</th>
+    <th>In/Out</th>
+    <th>IP</th>
+  </tr>
+
+<% @punches.each do |punch| %>
+  <tr>
+    <td><%=h punch.user.fname %></td>
+  
+    <td><%=h punch.ptime.to_s(:long) %></td>
+    <td><%=h punch.note %></td>
+    <td><%=h punch.ptype %></td>
+    <td><%=h punch.ip %></td>
+  </tr>
+<% end %>
+</table>
+</div>

@@ -1,0 +1,47 @@
+<h1>New punch</h1>
+
+<% form_for(@punch) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_field :note %>
+  </p>
+  <p>
+    <%= f.submit 'Punch' %>
+  </p>
+  <%= set_focus_to_id(:punch_user_id) %>
+<% end %>
+
+<h1>Last 5 punches</h1>
+
+<table  border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <th>User</th>
+    <th>Period</th>
+    <th>Date/Time</th>
+    <th>Note</th>
+    <th>In/Out</th>
+    <th>IP</th>
+  </tr>
+
+<% @punches.each do |punch| %>
+  <tr>
+    <td><%=h punch.user.fname %></td>
+    <td><%=h punch.period_id %></td>
+    <td><%=h punch.ptime.to_s(:long) %></td>
+    <td><%=h punch.note %></td>
+    <td><%=h punch.ptype %></td>
+    <td><%=h punch.ip %></td>
+ <!--   
+    <td><%= link_to 'Show', punch %></td>
+    <td><%= link_to 'Edit', edit_punch_path(punch) %></td>
+     <td><%= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete %></td>
+   -->
+  </tr>
+<% end %>
+</table>

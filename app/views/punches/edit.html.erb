@@ -1,0 +1,36 @@
+<h1>Editing punch</h1>
+
+<% form_for(@punch) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :period_id %><br />
+    <%= f.text_field :period_id %>
+  </p>
+  <p>
+    <%= f.label :ptime %><br />
+    <%= f.datetime_select :ptime %>
+  </p>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_field :note %>
+  </p>
+  <p>
+    <%= f.label :ptype %><br />
+    <%= f.text_field :ptype %>
+  </p>
+  <p>
+    <%= f.label :ip %><br />
+    <%= f.text_field :ip %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @punch %> |
+<%= link_to 'Back', punches_path %>

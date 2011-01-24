@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @punch.user_id %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%=h @punch.period_id %>
+</p>
+
+<p>
+  <b>Ptime:</b>
+  <%=h @punch.ptime %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @punch.note %>
+</p>
+
+<p>
+  <b>Ptype:</b>
+  <%=h @punch.ptype %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%=h @punch.ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_punch_path(@punch) %> |
+<%= link_to 'Back', punches_path %>

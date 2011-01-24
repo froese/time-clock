@@ -1,0 +1,39 @@
+<div id="side">
+<H2>Edit employees</h2>
+ <table  border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>In</th>
+    <th>Edit</th>
+   </tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.id %></td>
+    <td><%=h user.fname %></td>
+    <td><%=h user.clocked_in ? 'IN' : 'OUT' %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+  </tr>
+<% end -%>
+</table>
+<%= link_to 'New Employee', new_user_path %>
+</div>
+<div id="main">
+<H2>Reports</H2>
+ <table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+   <th>#</th>
+   <th>starting</th>
+   <th>ending</th>
+   <th>report</th>
+  </tr>
+ <% @periods.each do |period| %>
+  <tr>
+   <td><%= period.id %></td>
+   <td><%= period.starting.to_s(:long) %></td>
+   <td><%= period.ending.to_s(:long) %></td>
+   <td><%= link_to 'report', { :action => "report", :id => period} %></td>
+  </tr>
+  <% end -%>
+</table>
+</div>

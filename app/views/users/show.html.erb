@@ -1,0 +1,28 @@
+<p>
+  <b>Fname:</b>
+  <%=h @user.fname %>
+</p>
+
+<p>
+  <b>Lname:</b>
+  <%=h @user.lname %>
+</p>
+
+<p>
+  <b>Clocked in:</b>
+  <%=h @user.clocked_in %>
+</p>
+
+<p>
+  <b>Employed:</b>
+  <%=h @user.employed %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%=h @user.admin %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
